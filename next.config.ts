@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Use webpack bundler (avoids Turbopack OS resource limits on Windows)
+  turbopack: undefined,
+  images: {
+    unoptimized: false,
+    formats: ["image/avif", "image/webp"],
+  },
 };
 
 export default nextConfig;

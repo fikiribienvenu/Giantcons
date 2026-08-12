@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Giant Consult Ltd — Marketing Website
 
-## Getting Started
+A modern, fully responsive marketing website for Giant Consult Ltd, built with Next.js 15, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+---
+
+## Tech Stack
+
+| Tool | Purpose |
+|---|---|
+| Next.js 15 (App Router) | Framework |
+| TypeScript | Type safety |
+| Tailwind CSS v4 | Styling |
+| Framer Motion | Animations (optional upgrade) |
+| Resend | Contact form email delivery |
+| Vercel | Deployment |
+
+---
+
+## Getting Started Locally
+
+### Prerequisites
+- Node.js 18+ (tested on v24)
+- npm 9+
+
+### Install & Run
 
 ```bash
+# From the project root
+cd giant-consult
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Home
+│   ├── about/page.tsx      # About
+│   ├── services/page.tsx   # Services
+│   ├── projects/page.tsx   # Projects gallery
+│   ├── safety/page.tsx     # HSE / Safety
+│   ├── team/page.tsx       # Team
+│   ├── contact/page.tsx    # Contact
+│   └── api/contact/        # Contact form API route
+├── components/
+│   ├── layout/             # Header, Footer
+│   ├── sections/           # Hero, ServiceCard, ProjectCard, TeamCard, etc.
+│   └── ui/                 # FadeIn, SectionHeader
+└── data/
+    ├── projects.ts          # Project data (edit here to update portfolio)
+    ├── team.ts              # Team member data
+    └── partners.ts          # Partner/client logos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+public/
+├── brand/                   # Logo files
+├── projects/                # Project photos
+├── team/                    # Team headshots
+└── partners/                # Partner logos
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Update Content
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Add / Update a Project
+Edit `src/data/projects.ts`. Each project has:
+- `id` — unique slug
+- `title` — display name
+- `category` — `"Commercial"` | `"Institutional"` | `"Residential"`
+- `scopeItems` — array of scope line items
+- `images` — array of paths relative to `/public` (e.g. `"/projects/myphoto.jpg"`)
+- `featured` — `true` to show on the Home page
+
+Then copy your new photos into `public/projects/`.
+
+### Add / Update a Team Member
+Edit `src/data/team.ts`. Set `image: null` if no headshot is available yet (the card will show initials instead). Copy headshot JPG/PNG into `public/team/`.
+
+### Add / Update a Partner Logo
+Edit `src/data/partners.ts`. Copy the logo file into `public/partners/`.
+
+### Replace the Logo
+Overwrite `public/brand/logo.png` (and `logo1.png` if used) with the new file. The header, footer, and favicon will update automatically.
+
+---
+
+## Contact Form — Email Delivery
+
+The contact form posts to `/api/contact`. By default (no API key), submissions are logged to the server console.
+
+To enable real email delivery via [Resend](https://resend.com):
+
+1. Create a free account at https://resend.com
+2. Verify your sending domain or use the sandbox
+3. Copy your API key
+4. Create `.env.local` in the project root:
+
+```env
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxx
+```
+
+5. Restart the dev server — emails will now be delivered to `giantconsult@gmail.com`.
+
+---
+
+## Deployment to Vercel
+
+1. Push the `giant-consult` folder to a GitHub repository.
+2. Import the repo in [Vercel](https://vercel.com).
+3. Set the `RESEND_API_KEY` environment variable in Vercel project settings.
+4. Deploy — Vercel auto-detects Next.js.
+
+---
+
+## Swapping Images
+
+All images are served from `/public`. Replace any file with a new one of the same name and the site updates immediately on next build/reload. For production, run `npm run build` after swapping images.
+
+---
+
+## Brand Colors
+
+| Token | Hex | Usage |
+|---|---|---|
+| Navy | `#0B1F3A` | Primary backgrounds, headings |
+| Gold | `#C99A3C` | Accents, CTAs, highlights |
+| White | `#FFFFFF` | Backgrounds, text on dark |

@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large video files (exceed GitHub 100MB limit)
+public/projects/*.mp4
+public/projects/*.MP4
