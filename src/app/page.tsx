@@ -79,7 +79,7 @@ export default function HomePage() {
             {[
               { num: "2016", label: "Year Founded" },
               { num: "3", label: "Core Service Pillars" },
-              { num: "6+", label: "Major Projects" },
+              { num: "100+", label: "Major Projects" },
               { num: "7", label: "Expert Team Members" },
             ].map((stat) => (
               <div key={stat.label}>
