@@ -25,11 +25,11 @@ export const team: TeamMember[] = [
     image: "/team/eng-isewabeza-josue.jpg",
   },
   {
-    id: "kunduwera-methode",
-    name: "Eng. KUNDUWERA Methode",
+    id: "murwanashyaka-olivier",
+    name: "Eng. Murwanashyaka Olivier",
     title: "Civil Structural Engineer",
     bio: "Civil and Structural Engineering forms the backbone of every project — motivated by transforming architectural concepts into strong, safe structures that stand the test of time.",
-    image: "/team/eng-kunduwera-methode.jpg",
+    image: null,
   },
   {
     id: "ndayizigiye-aime",
@@ -46,8 +46,8 @@ export const team: TeamMember[] = [
     image: "/team/nteziryayo-simeon.png",
   },
   {
-    id: "theophile-rameaux",
-    name: "Rameaux THEOPHILE",
+    id: "gasana-eubille",
+    name: "Gasana Eubille",
     title: "Architect",
     bio: "Architecture is about shaping environments that enhance the lives of those who use them — blending functionality, sustainability, and aesthetic excellence into cohesive design.",
     image: null,
