@@ -29,7 +29,7 @@ export const team: TeamMember[] = [
     name: "Eng. Murwanashyaka Olivier",
     title: "Civil Structural Engineer",
     bio: "Civil and Structural Engineering forms the backbone of every project — motivated by transforming architectural concepts into strong, safe structures that stand the test of time.",
-    image: null,
+    image: "/team/murwanashyaka-olivier.jpg",
   },
   {
     id: "ndayizigiye-aime",
