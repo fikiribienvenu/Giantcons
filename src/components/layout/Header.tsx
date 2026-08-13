@@ -47,7 +47,7 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-3 flex-shrink-0">
               <div className="relative w-10 h-10 lg:w-12 lg:h-12">
                 <Image
-                  src="/brand/logo.png"
+                  src="/brand/logo1.png"
                   alt="Giant Consult Ltd logo"
                   fill
                   className="object-contain"
@@ -125,7 +125,7 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-2">
               <div className="relative w-9 h-9">
                 <Image
-                  src="/brand/logo.png"
+                  src="/brand/logo1.png"
                   alt="Giant Consult Ltd"
                   fill
                   className="object-contain"
