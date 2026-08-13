@@ -119,15 +119,20 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-[#0B1F3A] diagonal-divider" aria-label="Why choose us">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 pb-36 bg-[#0B1F3A]" aria-label="Why choose us">
+        {/* Diagonal bottom shape — sits below content, never clips it */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-20 bg-gray-50"
+          style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 0)" }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why Giant Consult"
             title="Built on Trust, Delivered with Excellence"
             subtitle="We bring together the disciplines, technology, and people needed to deliver high-performance buildings every time."
             light
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
             {whyUs.map((item, i) => {
               const Icon = item.icon;
               return (

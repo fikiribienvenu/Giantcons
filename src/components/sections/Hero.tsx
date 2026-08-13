@@ -115,8 +115,8 @@ export default function Hero({
 
       {/* Text content */}
       <div
-        style={{ position: "relative", zIndex: 4, width: "100%", padding: "6rem 0" }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ position: "relative", zIndex: 4, width: "100%" }}
+        className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-24"
       >
         <div className="max-w-2xl">
           {eyebrow && (
