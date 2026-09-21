@@ -17,7 +17,7 @@ A modern, fully responsive marketing website for Giant Consult Ltd, built with N
 
 ---
 
-## Getting Started Locally
+## Getting Started Locally make sure the every this is updated and 
 
 ### Prerequisites
 - Node.js 18+ (tested on v24)
